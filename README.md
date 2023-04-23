@@ -1,3 +1,8 @@
+## BEFORE FORKING AND RUNNING THE FILE, PLEASE DO THE FOLLOWING:
+
+- Download the model file from: https://drive.google.com/file/d/1WvhQhTeAny2Xz77786yQjFvLzfZp8ZDI/view?usp=sharing
+- Place the file into "http://firewatch/wildfiremodelnoinput/model/new_model/"
+
 ## Inspiration
 
 Our inspiration for FireWatch came from how unprepared most communities are when it comes to the impacts of wildfires, a destructive side effect of our rapidly declining climate. The devastating impacts of wildfires on our climate and communities is a clear indication of how important it is to address them. Due to the increasing frequency and intensity of wildfires, there is a critical need for innovative solutions to help mitigate their impact. FireWatch was created with the goal of addressing this need by predicting wildfires before they have the chance to occur and spread. We believe that FireWatch has the potential to combat one of the most destructive side effects of climate change. As the theme of the hackathon is climate, we wanted to promote climate resilience by providing users with essential information that can help them stay informed and potentially save lives.
