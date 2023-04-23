@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FireWatch</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicon-32x32.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>FireWatch<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          {% if loggedIn != "true" %}
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+          {% endif %}
+          {% if loggedIn == "true" %}
+          <li><a href="/search">Search</a></li>
+          <li><a href="/settings">Settings</a></li>
+          <li><a href="/logout">Log out</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down" style="width: 100%; display: inline-block;
+      
+            white-space: nowrap; text-align: center;">Welcome to <span>FireWatch</span></h2>
+            <p data-aos="fade-up">FireWatch predicts wildfires before they happen! Our web app uses machine learning models trained on earth surface and soil data to provide real-time risk assessments with unmatched accuracy. Perfect for forest rangers, firefighters, and anyone who wants to stay informed about wildfire threats in their area. Protect your property and community with FireWatch.            </p>
+            {% if loggedIn != "true" %}
+            <a data-aos="fade-up" data-aos-delay="200" href="/signup" class="btn-get-started">Get Started</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url(https://i0.wp.com/calmatters.org/wp-content/uploads/2022/06/112822-WildFire-NB-AP-CM-1.jpg?fit=2000%2C1331&ssl=1)"></div>
+      <div class="carousel-item" style="background-image: url(https://thumbs.dreamstime.com/b/thunder-storm-sky-rain-clouds-cracked-dry-land-wate-thunder-storm-sky-rain-clouds-cracked-dry-land-wate-abstract-143253312.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(https://www.pewtrusts.org/-/media/post-launch-images/2021/05/ap_21136146560132/16x9_m.jpg)"></div>
+      <div class="carousel-item" style="background-image: url(https://media.cnn.com/api/v1/images/stellar/prod/201028005444-03-blue-ridge-and-silverado-fires-1027.jpg?q=x_85,y_247,h_803,w_1428,c_crop/h_720,w_1280)"></div>
+      <div class="carousel-item" style="background-image: url(https://im.indiatimes.in/photogallery/2020/Sep/California-Wildfires-afp7_5f5a195513972.jpg?w=600&h=450&cc=1)"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <img class="leftrightarrows" src="./static/assets/img/leftarrow.png">
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <img class="leftrightarrows" src="./static/assets/img/rightarrow.png">
+      </a>
+
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+
+
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <ul class="nav nav-tabs row  g-2 d-flex">
+
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+              <h4>Forest Rangers</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+              <h4>Fire Fighters</h4>
+            </a><!-- End tab nav item -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+              <h4>Property Owners</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+              <h4>Government Officials</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <h3>Forest Rangers</h3>
+                <p class="fst-italic">
+                  Forest rangers play a crucial role in protecting our forests and natural resources from devastating wildfires. With FireWatch, forest rangers can have access to the latest tools and technologies to detect and respond to fires quickly and effectively. By leveraging real-time data on weather conditions, fire activity, and other critical information, FireWatch can help forest rangers stay ahead of potential wildfires, enabling them to take proactive measures to prevent and contain fires before they become unmanageable.
+                </p>
+                
+              </div>
+              <img class="persontype" src="./static/assets/img/forestranger.jpg">
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Fire Fighters</h3>
+                <p class="fst-italic">
+                  Firefighters play a critical role in managing and extinguishing wildfires. With the unpredictable nature of wildfires, firefighters need to have access to the latest tools and technologies to predict the behavior of fires and respond effectively. FireWatch provides firefighters with predictions on the potential spread of wildfires based on data from satellite imagery and weather forecasts. These predictions help firefighters to plan and allocate resources effectively to prevent wildfires from spreading, and to minimize the damage caused by fires.
+                </p>
+
+              </div>
+              <img class="persontype" src="./static/assets/img/firefighter.jpeg">
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Property Owners</h3>
+                <p class="fst-italic">
+                  Property owners in wildfire-prone areas need to be prepared for the possibility of a wildfire. FireWatch's image recognition technology can help property owners detect the possibility of a wildfire based on satellite footage, allowing them to take necessary precautions to protect their homes and families.
+                </p>
+              </div>
+              <img class="persontype" src="./static/assets/img/propertyowners.png">
+            </div>
+          </div><!-- End tab content item -->
+
+          <div class="tab-pane" id="tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Goverment Officials</h3>
+                <p class="fst-italic">
+                  Government officials have a responsibility to ensure public safety and prevent the spread of wildfires. FireWatch's image recognition technology provides a powerful tool for monitoring and detecting the possibility of a wildfire, enabling officials to take proactive measures to protect communities and prevent property damage.
+                </p>
+              </div>
+              <img class="persontype" src="./static/assets/img/governmentofficial.jpeg">
+            </div>
+          </div><!-- End tab content item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>FireWatch</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+       </a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><img id="toparrow" src="./static/assets/img/toparrow.png"></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>
