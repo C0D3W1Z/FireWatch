@@ -427,24 +427,6 @@ margin-bottom: 10px !important;
         <p id="textfrompython2" style="display: none;">.</p>
         <h1>FireWatch</h1>
         <h2>Preventing Fires Before They Happen</h2>
-        {% if text == "Happy" %}
-        <h2 class="emotiondetector" style="color: rgb(255, 203, 92); font-size: 14px;">Emotion Detected: Happy 😃</h2>
-        {% endif %}
-        {% if text == "Angry" %}
-        <h2 class="emotiondetector" style="color: rgb(255, 0, 0); font-size: 14px;">Emotion Detected: Angry 😡</h2>
-        {% endif %}
-        {% if text == "Surprise" %}
-        <h2 class="emotiondetector" style="color: rgb(255, 0, 247); font-size: 14px;">Emotion Detected: Surprise 😱</h2>
-        {% endif %}
-        {% if text == "Sad" %}
-        <h2 class="emotiondetector" style="color: blue; font-size: 14px;">Emotion Detected: Sad 😢</h2>
-        {% endif %}
-        {% if text == "Fear" %}
-        <h2 class="emotiondetector" style="color: rgb(183, 0, 255); font-size: 14px;">Emotion Detected: Fear 😳</h2>
-        {% endif %}
-        {% if text == "Neutral" %}
-        <h2 class="emotiondetector" style="color: rgb(0, 255, 149); font-size: 14px;" >Emotion Detected: Neutral 😐</h2>
-        {% endif %}
         <figure class="avatar">
           <img src="https://media.discordapp.net/attachments/1070133550172622918/1099541189729980466/image_7_1.png?width=710&height=710" /></figure>
           
@@ -457,7 +439,6 @@ margin-bottom: 10px !important;
           <textarea type="text" id="textinput" name="textinput" type="text" class="message-input" placeholder="Type message..."></textarea>
           <button type="submit" class="message-submit">Send</button>
         </form>
-        <!-- <button onclick="sendPercentToFlask();">click dis to see prompt ans in terminal</button> -->
       </div>
     </div>
     </div>
@@ -466,8 +447,6 @@ margin-bottom: 10px !important;
 <script>
   function sendPercentToFlask() {
     const xhr = new XMLHttpRequest();
-    // go to this route to pass the prompts
-    // if you need help with the ajax ask gpt, it will help
     xhr.open('POST', '/chat');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function() {
@@ -475,7 +454,6 @@ margin-bottom: 10px !important;
         console.log(xhr.responseText);
       }
     };
-    // <!-- Replace 60 with percent given from ml models -->
     xhr.send(JSON.stringify({ percent: 60 }));
 }
 
