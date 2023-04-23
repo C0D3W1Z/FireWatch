@@ -1,4 +1,4 @@
-## BEFORE FORKING AND RUNNING THE FILE, PLEASE DO THE FOLLOWING:
+## BEFORE FORKING AND LOADING THE MODEL, PLEASE DO THE FOLLOWING:
 
 - Download the model file from: https://drive.google.com/file/d/1WvhQhTeAny2Xz77786yQjFvLzfZp8ZDI/view?usp=sharing
 - Place the file into "FireWatch/wildfiremodelnoinput/model/new_model/"
