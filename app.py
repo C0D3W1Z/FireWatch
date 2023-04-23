@@ -17,7 +17,7 @@ from autogluon.tabular import TabularDataset
 from sklearn.metrics import accuracy_score
 import uuid
 
-openai.api_key = "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" # Remove key in production
+openai.api_key = "Key goes here" # Remove key in production
 
 ph = PasswordHasher()
 
